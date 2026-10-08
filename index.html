@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🍒 Brat Jar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <main>
+    <section id="startScreen" class="screen active">
+      <div class="hero">
+        <div class="eyebrow">A VERY SCIENTIFIC TEST</div>
+        <h1>🍒 BRAT JAR 🍒</h1>
+        <p class="tagline">How bratty are you, really?</p>
+        <p class="intro">Answer honestly. Or don't. We both know you're probably going to argue with the quiz.</p>
+      </div>
+      <div class="setup card">
+        <label for="nameInput">What should we call you?</label>
+        <input id="nameInput" maxlength="24" placeholder="Name or nickname">
+        <div class="setup-label">Pick your jar</div>
+        <div class="colors" id="colors">
+          <button class="color active" data-color="#ff3f8e" style="--swatch:#ff3f8e" aria-label="Hot pink"></button>
+          <button class="color" data-color="#ff3158" style="--swatch:#ff3158" aria-label="Cherry red"></button>
+          <button class="color" data-color="#a855f7" style="--swatch:#a855f7" aria-label="Purple"></button>
+          <button class="color" data-color="#f4f0f2" style="--swatch:#f4f0f2" aria-label="Silver"></button>
+        </div>
+        <button id="startBtn" class="primary">START BEING A PROBLEM ✦</button>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <header class="quiz-head">
+        <div><span id="categoryLabel" class="eyebrow"></span><h2 id="counter">01 / 48</h2></div>
+        <div class="mini-level">BRAT LEVEL <strong id="miniPercent">0%</strong></div>
+      </header>
+      <div class="quiz-layout">
+        <div class="jar-column">
+          <div class="jar-percent" id="jarPercent">0%</div>
+          <div class="jar" id="jar">
+            <div class="jar-fill" id="jarFill"></div>
+            <div class="jar-items" id="jarItems"></div>
+            <div class="jar-label">BRAT</div>
+            <div class="jar-shine"></div>
+          </div>
+          <p id="jarCaption">Your crimes are currently minimal.</p>
+        </div>
+        <div class="question-column">
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          <article class="question-card card">
+            <div class="question-number" id="questionNumber">QUESTION 1</div>
+            <h3 id="questionText"></h3>
+            <p>How much does this sound like you?</p>
+            <div class="ratings" id="ratings">
+              <button data-score="1"><span>1</span><small>Not my thing</small></button>
+              <button data-score="2"><span>2</span><small>Maybe occasionally</small></button>
+              <button data-score="3"><span>3</span><small>Pretty bratty</small></button>
+              <button data-score="4"><span>4</span><small>Oh, absolutely</small></button>
+              <button data-score="5"><span>5</span><small>You caught me</small></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultsScreen" class="screen">
+      <div class="results card">
+        <div class="eyebrow">BRAT JAR COMPLETE</div>
+        <h2 id="resultName"></h2>
+        <div class="result-layout">
+          <div class="final-jar-wrap">
+            <div class="jar-percent" id="finalPercent">0%</div>
+            <div class="jar final"><div class="jar-fill" id="finalFill"></div><div class="jar-items" id="finalItems"></div><div class="jar-label">BRAT</div><div class="jar-shine"></div></div>
+          </div>
+          <div class="result-copy">
+            <div class="big-percent"><span id="resultPercent">0</span>%</div>
+            <div class="type-kicker">YOUR BRAT TYPE</div>
+            <h3 id="resultType"></h3>
+            <blockquote id="resultQuote"></blockquote>
+            <div id="traits" class="traits"></div>
+          </div>
+        </div>
+        <div class="result-actions"><button id="saveBtn" class="primary">SAVE MY BRAT JAR ✦</button><button id="restartBtn" class="secondary">DO IT AGAIN</button></div>
+        <p id="saveNote" class="save-note"></p>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
